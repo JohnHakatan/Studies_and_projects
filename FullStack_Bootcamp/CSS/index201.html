@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CSS 201</title>
+    <style>
+    
+        .box {
+            font-size: 40px;
+            text-shadow: 2px 2px 2px red;
+            width: 300px; 
+            height: 300px;
+            text-transform: uppercase;
+            border: 10px solid red;
+            position: relative;
+        }
+        .second-box {
+            position: absolute;
+            border: 3px solid blue
+    
+        }
+        #parent > .box{
+            height: 20px;
+            border: 2px solid green;
+        }
+        .box:not(.dontselectme){
+            background-color: yellow;
+        }
+        .box:hover{
+            background-color: blue;
+        }
+        .circle {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    animation: moveCircle 4s linear infinite;
+}
+
+@keyframes moveCircle {
+            0% {
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+            25% {
+                top: 0;
+                left: calc(100% - 50px);
+                background-color: blue;
+            }
+            50% {
+                top: calc(100% - 50px);
+                left: calc(100% - 50px);
+                background-color: green;
+            }
+            75% {
+                top: calc(100% - 50px);
+                left: 0;
+                background-color: yellow;
+            }
+            100% {
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        This is first
+    </div>
+    <div>
+        this is second
+    </div>
+    <div class="box"> Hello world
+
+        <div class="second-box">Top right</div>
+    </div>
+    <div id="parent">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box dontselectme"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="circle"></div>
+</body>
+</html>
